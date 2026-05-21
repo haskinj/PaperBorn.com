@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,10 +10,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
+    :root {
+      --bg: #090012;
+      --cyan: #54f7ff;
+      --hot: #ff4fd8;
+      --text: #f2f2f2;
+    }
+
     body {
       margin: 0;
-      background: #0d0d10;
-      color: #f2f2f2;
+      background:
+        radial-gradient(circle at top left, rgba(255, 79, 216, 0.15), transparent 45rem),
+        radial-gradient(circle at bottom right, rgba(84, 247, 255, 0.12), transparent 45rem),
+        linear-gradient(135deg, #090012, #0d0d10 60%, #030611);
+      color: var(--text);
       font-family: 'Outfit', Arial, Helvetica, sans-serif;
       display: flex;
       align-items: center;
@@ -25,7 +34,7 @@
 
     .container {
       max-width: 800px;
-      padding: 2rem;
+      padding: 3rem 2rem;
     }
 
     img {
@@ -38,12 +47,12 @@
     }
 
     img:hover {
-      transform: scale(1.02);
-      filter: drop-shadow(0 8px 30px rgba(255, 255, 255, 0.05));
+      transform: scale(1.01);
+      filter: drop-shadow(0 8px 30px rgba(255, 255, 255, 0.04));
     }
 
     h1 {
-      font-size: 3rem;
+      font-size: 3.5rem;
       font-weight: 600;
       margin-bottom: 0.75rem;
       letter-spacing: 0.08em;
@@ -52,19 +61,103 @@
       -webkit-text-fill-color: transparent;
     }
 
-    p {
-      font-size: 1.15rem;
+    .tagline {
+      font-size: 1.25rem;
       font-weight: 300;
       line-height: 1.6;
-      opacity: 0.85;
-      margin: 1rem 0;
+      opacity: 0.9;
+      margin: 1.5rem 0 3rem 0;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .template-card {
+      background: rgba(24, 6, 44, 0.4);
+      border: 1px solid rgba(84, 247, 255, 0.2);
+      border-radius: 24px;
+      padding: 2.5rem;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+      transition: border-color 0.4s ease, box-shadow 0.4s ease;
+      text-align: left;
+    }
+
+    .template-card:hover {
+      border-color: rgba(255, 79, 216, 0.4);
+      box-shadow: 0 25px 60px rgba(255, 79, 216, 0.06);
+    }
+
+    .template-header {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--cyan);
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    .template-title {
+      font-size: 1.6rem;
+      font-weight: 600;
+      margin: 0 0 1rem 0;
+      color: #fff;
+    }
+
+    .template-motto {
+      font-style: italic;
+      color: var(--hot);
+      margin-bottom: 1.5rem;
+      border-left: 3px solid var(--hot);
+      padding-left: 1rem;
+      line-height: 1.5;
+    }
+
+    .template-description {
+      font-size: 1rem;
+      line-height: 1.6;
+      opacity: 0.75;
+      margin-bottom: 2rem;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      padding: 0.8rem 1.8rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border-radius: 99px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--cyan);
+      color: #090012;
+      box-shadow: 0 4px 15px rgba(84, 247, 255, 0.25);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(84, 247, 255, 0.45);
     }
 
     footer {
-      margin-top: 4rem;
+      margin-top: 5rem;
       font-size: 0.85rem;
-      opacity: 0.4;
+      opacity: 0.35;
       letter-spacing: 0.05em;
+      text-align: center;
     }
   </style>
 </head>
@@ -76,14 +169,28 @@
 
     <h1>PaperBorn</h1>
 
-    <p>
+    <div class="tagline">
       An experimental project exploring the transformation of
       research papers into characters, entities, worlds, and living systems.
-    </p>
+      <strong>Making research playable.</strong>
+    </div>
 
-    <p>
-      Making research playable.
-    </p>
+    <section class="template-card">
+      <div class="template-header">admissions toolkit</div>
+      <h2 class="template-title">Paperborn Admissions Template v1.0</h2>
+      <div class="template-motto">
+        "Do not illustrate the paper. Incarnate its logic."
+      </div>
+      <div class="template-description">
+        Download the official Paperborn Guide and Template. Learn how to transform academic papers, research, or structured data into fully-grounded entity profiles, stats, and visual representations.
+      </div>
+      <div class="button-row">
+        <a href="Paperborn_Admissions_Template_v1.pdf" download class="btn btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          Download Template (PDF)
+        </a>
+      </div>
+    </section>
 
     <footer>
       © 2026 Jesse Haskin · DodecaGone Systems
@@ -91,5 +198,4 @@
 
   </main>
 </body>
-
 </html>
