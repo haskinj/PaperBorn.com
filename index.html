@@ -5,12 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PaperBorn</title>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+
   <style>
     body {
       margin: 0;
       background: #0d0d10;
       color: #f2f2f2;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: 'Outfit', Arial, Helvetica, sans-serif;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -19,31 +23,47 @@
     }
 
     .container {
-      max-width: 700px;
+      max-width: 800px;
       padding: 2rem;
     }
 
     img {
-      width: 220px;
-      max-width: 80%;
-      margin-bottom: 2rem;
+      width: 660px;
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 2.5rem;
+      filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.5));
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease;
+    }
+
+    img:hover {
+      transform: scale(1.02);
+      filter: drop-shadow(0 8px 30px rgba(255, 255, 255, 0.05));
     }
 
     h1 {
       font-size: 3rem;
-      margin-bottom: 0.5rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
       letter-spacing: 0.08em;
+      background: linear-gradient(135deg, #ffffff 0%, #a3a3a3 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     p {
+      font-size: 1.15rem;
+      font-weight: 300;
       line-height: 1.6;
-      opacity: 0.9;
+      opacity: 0.85;
+      margin: 1rem 0;
     }
 
     footer {
-      margin-top: 3rem;
+      margin-top: 4rem;
       font-size: 0.85rem;
-      opacity: 0.5;
+      opacity: 0.4;
+      letter-spacing: 0.05em;
     }
   </style>
 </head>
@@ -51,7 +71,7 @@
 <body>
   <main class="container">
 
-    <img src="file_00000000303071f8a3216318a9529478.png" alt="PaperBorn Logo" />
+    <img src="PaperBornLogo1.png" alt="PaperBorn Logo" />
 
     <h1>PaperBorn</h1>
 
